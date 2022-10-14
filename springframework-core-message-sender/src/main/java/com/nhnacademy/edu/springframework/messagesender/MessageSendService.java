@@ -15,6 +15,11 @@ public class MessageSendService {
         this.messageSender = messageSender;
     }
 
+    public void setEmailMessageSender(
+            MessageSender messageSender) {
+            this.messageSender = messageSender;
+        }
+
     public MessageSendService(MessageSender messageSender) {
         this.messageSender = messageSender;
     }

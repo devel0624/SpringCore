@@ -5,10 +5,10 @@
        default-init-method="init"
        default-destroy-method="destroy">
 
-<!--    <bean id="emailMessageSender"-->
-<!--          class="com.nhnacademy.edu.springframework.messagesender.service.EmailMessageSender"-->
-<!--          scope="singleton">-->
-<!--    </bean>-->
+    <bean id="emailMessageSender"
+          class="com.nhnacademy.edu.springframework.messagesender.service.EmailMessageSender"
+          scope="singleton">
+    </bean>
 
     <bean id="smsMessageSender"
           class="com.nhnacademy.edu.springframework.messagesender.service.SmsMessageSender"
@@ -17,7 +17,7 @@
 
     <bean id="messageSendService"
           class="com.nhnacademy.edu.springframework.messagesender.MessageSendService"
-          autowire="byType">
+          autowire="byName">
     </bean>
 
 </beans>
