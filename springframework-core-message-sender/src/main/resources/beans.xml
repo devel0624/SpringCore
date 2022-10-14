@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-tool.xsd"
        default-init-method="init"
        default-destroy-method="destroy">
 
-    <bean id="emailMessageSender"
-          class="com.nhnacademy.edu.springframework.messagesender.service.EmailMessageSender"
-          scope="singleton">
-    </bean>
+<!--    annotation 설정-->
+    <context:annotation-config/>
+
+<!--    @Required annotation-->
+    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
+
+<!--    <bean id="emailMessageSender"-->
+<!--          class="com.nhnacademy.edu.springframework.messagesender.service.EmailMessageSender"-->
+<!--          scope="singleton">-->
+<!--    </bean>-->
 
     <bean id="smsMessageSender"
           class="com.nhnacademy.edu.springframework.messagesender.service.SmsMessageSender"
@@ -16,8 +26,7 @@
     </bean>
 
     <bean id="messageSendService"
-          class="com.nhnacademy.edu.springframework.messagesender.MessageSendService"
-          autowire="byName">
+          class="com.nhnacademy.edu.springframework.messagesender.MessageSendService">
     </bean>
 
 </beans>
