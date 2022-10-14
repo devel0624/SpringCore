@@ -7,14 +7,15 @@ import org.springframework.beans.factory.annotation.Required;
 
 public class MessageSendService {
 
-    @Autowired
     private MessageSender messageSender;
 
     public MessageSendService(){
         // 기본 생성자
     }
 
+    @Autowired
     public MessageSendService(MessageSender messageSender) {
+        System.out.println("Autowired to Constructor");
         this.messageSender = messageSender;
     }
 
