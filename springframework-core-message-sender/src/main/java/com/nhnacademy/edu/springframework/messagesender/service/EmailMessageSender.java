@@ -12,9 +12,18 @@ public class EmailMessageSender implements MessageSender{
         return false;
     }
 
+    public void init(){
+        System.out.println(this.getClassName() + " call init Method");
+    }
+
+
 //    @Override
 //    public boolean sendMessage(User user, String message) {
 //        System.out.printf("Arrived Message from %s , \"%s\" \n",user.getEmail(),message);
 //        return false;
 //    }
+
+    public String getClassName(){
+        return this.getClass().getSimpleName();
+    }
 }

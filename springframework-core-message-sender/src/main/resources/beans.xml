@@ -5,12 +5,14 @@
 
     <bean id="emailMessageSender"
           class="com.nhnacademy.edu.springframework.messagesender.service.EmailMessageSender"
+          init-method="init"
           scope="singleton">
 
     </bean>
 
     <bean id="smsMessageSender"
           class="com.nhnacademy.edu.springframework.messagesender.service.SmsMessageSender"
+          init-method="init"
           scope="prototype">
 
     </bean>

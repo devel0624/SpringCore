@@ -3,10 +3,14 @@ package com.nhnacademy.edu.springframework.messagesender.service;
 import com.nhnacademy.edu.springframework.messagesender.User;
 import org.springframework.beans.factory.InitializingBean;
 
-public class SmsMessageSender implements MessageSender, InitializingBean {
+public class SmsMessageSender implements MessageSender {
 
     public SmsMessageSender() {
-        System.out.println(this.getClass().getSimpleName() + "'s Constructor");
+        System.out.println(this.getClassName() + "'s Constructor");
+    }
+
+    public void init(){
+        System.out.println(this.getClassName() + " call init Method");
     }
 
     @Override
@@ -15,15 +19,13 @@ public class SmsMessageSender implements MessageSender, InitializingBean {
         return false;
     }
 
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        // org.springframework.beans.factory.InitializingBean 인터페이스를 사용
-        // 컴포넌트가 프레임워크에 대해 의존성을 가지기 때문에 권장하지 않음.
-    }
-
 //    @Override
 //    public boolean sendMessage(User user, String message) {
 //        System.out.printf("Arrived Message from %s , \"%s\" \n",user.getPhoneNumber(),message);
 //        return false;
 //    }
+
+    public String getClassName(){
+        return this.getClass().getSimpleName();
+    }
 }
