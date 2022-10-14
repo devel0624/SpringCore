@@ -7,7 +7,7 @@ public class InjectionMain {
         try (ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml")){
             MessageSendService messageSendService = context.getBean("messageSendService",
                 MessageSendService.class);
-            messageSendService.doSendMessage();
+            messageSendService.doSendMessages();
         }
     }
 }
