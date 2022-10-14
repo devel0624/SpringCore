@@ -2,6 +2,7 @@ package com.nhnacademy.edu.springframework.messagesender;
 
 import com.nhnacademy.edu.springframework.messagesender.User;
 import com.nhnacademy.edu.springframework.messagesender.service.MessageSender;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 
 public class MessageSendService {
@@ -11,18 +12,18 @@ public class MessageSendService {
         // 기본 생성자
     }
 
-
-//    public void setMessageSender(
-//        MessageSender messageSender) {
-//        this.messageSender = messageSender;
-//    }
-    @Required
-    public void setSmsMessageSender(
-            MessageSender messageSender) {
-            this.messageSender = messageSender;
-        }
-
     public MessageSendService(MessageSender messageSender) {
+        this.messageSender = messageSender;
+    }
+
+    public void setMessageSender(
+        MessageSender messageSender) {
+        this.messageSender = messageSender;
+    }
+
+    @Autowired
+    public void setSmsMessageSender(MessageSender messageSender) {
+        System.out.println("Autowired");
         this.messageSender = messageSender;
     }
 
