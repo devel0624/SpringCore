@@ -16,6 +16,9 @@ public class EmailMessageSender implements MessageSender{
         System.out.println(this.getClassName() + " call init Method");
     }
 
+    public void destroy(){
+        System.out.println(this.getClassName() + " call destroy Method");
+    }
 
 //    @Override
 //    public boolean sendMessage(User user, String message) {

@@ -18,7 +18,7 @@ public class ScopeMain {
             new MessageSendService(context.getBean("smsMessageSender", MessageSender.class)).doSendMessage();
             System.out.println("------------------------------------------------------------------------");
             new MessageSendService(context.getBean("smsMessageSender", MessageSender.class)).doSendMessage();
-
+            System.out.println("------------------------------------------------------------------------");
         }
     }
 }
