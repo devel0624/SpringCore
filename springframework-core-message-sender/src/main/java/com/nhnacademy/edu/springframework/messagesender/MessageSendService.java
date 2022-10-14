@@ -8,8 +8,12 @@ public class MessageSendService {
     public MessageSendService(MessageSender messageSender) {
         this.messageSender = messageSender;
     }
+//    public boolean doSendMessage(){
+//        return messageSender.sendMessage(new User("test@example.org","010-XXXX-XXXX"),"Just Message");
+//    }
+
     public boolean doSendMessage(){
-        return messageSender.sendMessage(new User("test@example.org","010-XXXX-XXXX"),"Just Message");
+        return messageSender.sendMessage();
     }
 }
 
