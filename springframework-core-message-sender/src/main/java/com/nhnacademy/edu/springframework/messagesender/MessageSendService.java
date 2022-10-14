@@ -4,7 +4,17 @@ import com.nhnacademy.edu.springframework.messagesender.User;
 import com.nhnacademy.edu.springframework.messagesender.service.MessageSender;
 
 public class MessageSendService {
-    private final MessageSender messageSender;
+    private MessageSender messageSender;
+
+    public MessageSendService(){
+        // 기본 생성자
+    }
+
+    public void setMessageSender(
+        MessageSender messageSender) {
+        this.messageSender = messageSender;
+    }
+
     public MessageSendService(MessageSender messageSender) {
         this.messageSender = messageSender;
     }
