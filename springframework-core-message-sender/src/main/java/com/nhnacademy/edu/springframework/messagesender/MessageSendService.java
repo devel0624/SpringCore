@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 
 public class MessageSendService {
+
+    @Autowired
     private MessageSender messageSender;
 
     public MessageSendService(){
@@ -21,7 +23,6 @@ public class MessageSendService {
         this.messageSender = messageSender;
     }
 
-    @Autowired
     public void setSmsMessageSender(MessageSender messageSender) {
         System.out.println("Autowired");
         this.messageSender = messageSender;
