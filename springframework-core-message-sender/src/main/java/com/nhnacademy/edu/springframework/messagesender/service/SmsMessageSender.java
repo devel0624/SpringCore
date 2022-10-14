@@ -1,9 +1,9 @@
 package com.nhnacademy.edu.springframework.messagesender.service;
 
 import com.nhnacademy.edu.springframework.messagesender.User;
-import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.DisposableBean;
 
-public class SmsMessageSender implements MessageSender {
+public class SmsMessageSender implements MessageSender, DisposableBean {
 
     public SmsMessageSender() {
         System.out.println(this.getClassName() + "'s Constructor");
@@ -11,6 +11,12 @@ public class SmsMessageSender implements MessageSender {
 
     public void init(){
         System.out.println(this.getClassName() + " call init Method");
+    }
+
+    @Override
+    public void destroy() throws Exception {
+        // org.springframework.beans.factory.DisposableBean 인터페이스, 객체 소멸시 호출
+        // InitializingBean 과 마찬가지로 스프링 프레임워크에 의존성을 가지게 되어 권장하지 않음
     }
 
     @Override
